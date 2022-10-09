@@ -1,0 +1,67 @@
+@import 'all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap');
+
+
+body {
+    font-family: "Cairo";
+}
+
+.container {
+    max-width: 1280px !important;
+}
+
+.custom-btn {
+    background: transparent linear-gradient(180deg, #243E7A 0%, #116CC8 0%, #25427F 100%) 0% 0% no-repeat padding-box;
+    border-radius: 10px !important;
+    opacity: 1;
+    overflow: hidden;
+    padding: 10px 20px !important;
+    border-color: transparent !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    font-weight: bold !important;
+
+    span {
+        margin-right: 10px;
+
+        &::before {
+            content: "\f060";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            padding-right: 5px;
+            border-right: 2px solid #fff;
+        }
+    }
+}
+
+.p-30 {
+    padding: 15px;
+
+    @media(min-width:768px) {
+
+        padding: 30px;
+    }
+}
+
+.title {
+    letter-spacing: 0;
+    text-align: center;
+
+    font: normal normal bold 24px/40px Cairo;
+    letter-spacing: 0px;
+    color: #2A6CCA;
+    opacity: 1;
+    margin-bottom: 30px;
+
+    @media(min-width:768px) {
+        font: normal normal bold 30px/50px Cairo;
+    }
+
+    img {
+        max-width: 60px;
+        margin-left: 30px;
+    }
+
+}
