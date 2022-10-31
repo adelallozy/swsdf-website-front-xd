@@ -17,7 +17,10 @@
                     <li>الحصول علي رخصة المزاولة</li>
                     <li>الحصول علي رخصة المزاولة</li>
                   </ul>
-                  <a href="#" class="btn btn-primary custom-btn">
+                  <a
+                    href="/profissional-diving"
+                    class="btn btn-primary custom-btn"
+                  >
                     سجل الان
                     <span></span>
                   </a>
@@ -38,7 +41,10 @@
                     <li>الحصول علي رخصة المزاولة</li>
                     <li>الحصول علي رخصة المزاولة</li>
                   </ul>
-                  <a href="#" class="btn btn-primary custom-btn">
+                  <a
+                    href="/profissional-diving"
+                    class="btn btn-primary custom-btn"
+                  >
                     سجل الان
                     <span></span>
                   </a>
@@ -59,7 +65,10 @@
                     <li>الحصول علي رخصة المزاولة</li>
                     <li>الحصول علي رخصة المزاولة</li>
                   </ul>
-                  <a href="#" class="btn btn-primary custom-btn">
+                  <a
+                    href="/profissional-diving"
+                    class="btn btn-primary custom-btn"
+                  >
                     سجل الان
                     <span></span>
                   </a>

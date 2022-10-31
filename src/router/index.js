@@ -1,29 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import DivingCenter from '../views/DivingCenter.vue'
-import Champions from '../views/Champions.vue'
-import Login from '../views/Login.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: () => import('../views/Home.vue'),
   },
   {
     path: '/diving-center',
     name: 'diving-center',
-    component: DivingCenter,
+    component: () => import('../views/DivingCenter.vue'),
+  },
+  {
+    path: '/profissional-diving',
+    name: 'profissional-diving',
+    component: () => import('../views/ProfissionalDiving.vue'),
   },
   {
     path: '/champions/:id?',
     name: 'champions',
-    component: Champions,
+    component: () => import('../views/Champions.vue'),
   },
   {
     path: '/login',
     name: 'login',
-    component: Login,
+    component: () => import('../views/Login.vue'),
   },
 ]
 

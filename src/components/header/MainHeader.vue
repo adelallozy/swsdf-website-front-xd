@@ -15,11 +15,8 @@
             <button
               class="navbar-toggler"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+              data-bs-toggle="modal"
+              data-bs-target="#navs"
             >
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,12 +55,67 @@
                   </router-link>
                 </li>
               </ul>
+              <teleport to="body">
+                <div
+                  class="modal navs fade"
+                  id="navs"
+                  tabindex="-1"
+                  aria-labelledby="navsLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <ul class="navbar-nav mb-lg-0">
+                          <li class="nav-item">
+                            <router-link
+                              class="nav-link active"
+                              aria-current="page"
+                              to="/"
+                            >
+                              {{ $t('navs.main') }}
+                            </router-link>
+                          </li>
+                          <li class="nav-item">
+                            <router-link class="nav-link" to="/">
+                              {{ $t('navs.diving') }}
+                            </router-link>
+                          </li>
+                          <li class="nav-item">
+                            <router-link class="nav-link" to="/">
+                              {{ $t('navs.marineSports') }}
+                            </router-link>
+                          </li>
+                          <li class="nav-item">
+                            <router-link class="nav-link" to="/diving-center">
+                              {{ $t('navs.divingCenters') }}
+                            </router-link>
+                          </li>
+                          <li class="nav-item">
+                            <router-link class="nav-link" to="/">
+                              {{ $t('navs.competitions') }}
+                            </router-link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </teleport>
             </div>
           </div>
         </div>
         <div class="user">
           <router-link to="/login">
-            <i class="fa-regular fa-user"></i>
+            <i class="fa-regular fa-user text-white"></i>
           </router-link>
         </div>
       </div>
@@ -91,6 +143,49 @@ export default {
 </script>
 
 <style lang="scss">
+.modal.navs {
+  &.fade {
+    .modal-dialog {
+      transform: translate(-100%, 0) !important;
+    }
+  }
+  &.show {
+    .modal-dialog {
+      transform: none !important;
+    }
+  }
+  .modal-dialog {
+    margin: 0;
+    margin-inline-start: auto;
+    height: 100%;
+    .modal-content {
+      border-radius: 0 !important;
+      height: 100%;
+      margin-inline-start: auto;
+      width: 100%;
+      max-width: 250px;
+      .modal-header {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: 0;
+        padding: 0;
+        z-index: 10;
+        button {
+          box-shadow: none !important;
+          outline: 0 !important;
+        }
+      }
+      ul {
+        padding: 0;
+        padding-top: 30px;
+        li {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
 .top-header {
   > img {
     position: absolute;
@@ -104,6 +199,11 @@ export default {
     > img {
       display: none;
     }
+  }
+  button.navbar-toggler {
+    border: 0;
+    outline: 0;
+    box-shadow: none !important;
   }
   nav {
     position: relative;
