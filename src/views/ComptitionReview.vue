@@ -54,7 +54,7 @@
             </div>
           </div>
 
-          <div class="action">
+          <div class="action" v-if="competition.data.stage != 'Finished'">
             <a
               v-if="competition.data.sport == 'Freediving'"
               :href="`/competitions/freediving-participation-application/${competition.data.id}`"
@@ -212,7 +212,6 @@ onMounted(() => getCompetitions())
 function getCompetitions() {
   axios.get(`competitions/get-competition/${id.id}`).then((data) => {
     competition.data = data.data.competition
-    console.log(competition.data)
   })
 }
 </script>

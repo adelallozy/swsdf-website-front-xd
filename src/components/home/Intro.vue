@@ -18,31 +18,32 @@
           الغوص الحر -->
         </h2>
         <count-down :date="competitions.data[0].starts_at" />
-
-        <a
-          v-if="competitions.data[0].sport == 'Freediving'"
-          :href="`/competitions/freediving-participation-application/${competitions.data[0].id}`"
-          class="btn btn-primary custom-btn mx-auto mt-4"
-        >
-          اشترك الان
-          <span></span>
-        </a>
-        <a
-          v-else-if="competitions.data[0].sport == 'Jetski'"
-          :href="`/competitions/jetski-participation-application/${competitions.data[0].id}`"
-          class="btn btn-primary custom-btn mx-auto mt-4"
-        >
-          اشترك الان
-          <span></span>
-        </a>
-        <a
-          v-else
-          :href="`/competitions/sport-fishing-participation-application/${competitions.data[0].id}`"
-          class="btn btn-primary custom-btn mx-auto mt-4"
-        >
-          اشترك الان
-          <span></span>
-        </a>
+        <div class="actions" v-if="competitions.data[0].stage != 'Finished'">
+          <a
+            v-if="competitions.data[0].sport == 'Freediving'"
+            :href="`/competitions/freediving-participation-application/${competitions.data[0].id}`"
+            class="btn btn-primary custom-btn mx-auto mt-4"
+          >
+            اشترك الان
+            <span></span>
+          </a>
+          <a
+            v-else-if="competitions.data[0].sport == 'Jetski'"
+            :href="`/competitions/jetski-participation-application/${competitions.data[0].id}`"
+            class="btn btn-primary custom-btn mx-auto mt-4"
+          >
+            اشترك الان
+            <span></span>
+          </a>
+          <a
+            v-else
+            :href="`/competitions/sport-fishing-participation-application/${competitions.data[0].id}`"
+            class="btn btn-primary custom-btn mx-auto mt-4"
+          >
+            اشترك الان
+            <span></span>
+          </a>
+        </div>
       </div>
       <div class="social">
         <ul>
