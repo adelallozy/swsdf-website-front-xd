@@ -1,0 +1,22 @@
+@mixin line-clamp($line) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+}
+
+@mixin font-size() {
+    font-size: 18px;
+    line-height: 33px;
+
+    @media(min-width:768px) {
+        line-height: 40px;
+        font-size: 24px;
+    }
+}
+
+@mixin flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

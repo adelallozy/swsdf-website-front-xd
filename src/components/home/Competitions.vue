@@ -48,14 +48,24 @@ export default {}
 
 <style lang="scss">
 .competitions {
-  background: url('@/assets/bg-2.png');
-  background-size: cover;
-  background-position: center center;
+  background: url('@/assets/section-bg1.png');
   min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: end;
+  // background-size: cover;
+  background-position: center center;
   padding: 50px 0;
+  position: relative;
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   background: url('@/assets/section-bg1.png');
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  // }
   .container {
     padding-top: 150px;
   }

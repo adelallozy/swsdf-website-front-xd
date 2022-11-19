@@ -50,7 +50,7 @@
                   </router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link class="nav-link" to="/">
+                  <router-link class="nav-link" to="/competitions">
                     {{ $t('navs.competitions') }}
                   </router-link>
                 </li>
@@ -114,9 +114,9 @@
           </div>
         </div>
         <div class="user">
-          <router-link to="/login">
+          <a href="/sign-in">
             <i class="fa-regular fa-user text-white"></i>
-          </router-link>
+          </a>
         </div>
       </div>
     </nav>

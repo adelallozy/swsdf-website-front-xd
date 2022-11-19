@@ -1,16 +1,19 @@
 {
-  "locale":{
-    "ar":"ar",
-    "en":"en"
-  },
-  "navs":{
-    "main" : "Main",
-    "diving" : "Diving",
-    "marineSports" : "Marine sports",
-    "divingCenters" : "Diving centers",
-    "competitions" : "Competitions"
-  },
-  "headers":{
-    
-  }
+	"locale": {
+		"ar": "ar",
+		"en": "en"
+	},
+	"navs": {
+		"main": "Main",
+		"diving": "Diving",
+		"marineSports": "Marine sports",
+		"divingCenters": "Diving centers",
+		"competitions": "Competitions"
+	},
+	"headers": {
+		"day": "Day",
+		"Min": "Min",
+		"Hour": "Hour",
+		"Sec": "Sec"
+	}
 }

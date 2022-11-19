@@ -1,0 +1,19 @@
+{
+	"locale": {
+		"ar": "ar",
+		"en": "en"
+	},
+	"navs": {
+		"main": "الرئيسية",
+		"diving": "الغوص",
+		"marineSports": "الرياضات البحرية",
+		"divingCenters": "مراكز الغوص",
+		"competitions": "البطولات"
+	},
+	"headers": {
+		"day": "يوم",
+		"Min": "دقيقة",
+		"Hour": "ساعة",
+		"Sec": "ثانية"
+	}
+}

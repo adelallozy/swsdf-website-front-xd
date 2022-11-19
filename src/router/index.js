@@ -17,9 +17,16 @@ const routes = [
     component: () => import('../views/ProfissionalDiving.vue'),
   },
   {
-    path: '/champions/:id?',
-    name: 'champions',
+    path: '/competitions',
+    name: 'competitions',
     component: () => import('../views/Champions.vue'),
+    children: [
+      {
+        path: 'review/:id',
+        props: true,
+        component: () => import('@/views/ComptitionReview.vue'),
+      },
+    ],
   },
   {
     path: '/login',

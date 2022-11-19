@@ -1,37 +1,48 @@
 <template>
   <div class="intro">
     <div class="container">
-      <div class="content">
+      <div class="content" v-if="competitions.data">
         <h2>
-          <span>بطولة</span>
-          <br />
-          الغوص الحر
+          <span
+            class="d-block"
+            v-for="item in setTitle(
+              $i18n.locale == 'ar'
+                ? competitions.data[0].title_ar
+                : competitions.data[0].title_en,
+            )"
+            :key="item"
+          >
+            {{ item }}
+          </span>
+          <!-- <br />
+          الغوص الحر -->
         </h2>
-        <div class="countdown">
-          <div class="month">
-            <span>1</span>
-            <span>شهر</span>
-          </div>
-          <div class="week">
-            <span>15</span>
-            <span>اسبوع</span>
-          </div>
-          <div class="day">
-            <span>5</span>
-            <span>يوم</span>
-          </div>
-          <div class="hour">
-            <span>22</span>
-            <span>ساعه</span>
-          </div>
-        </div>
-        <router-link
-          to="/champions/1"
+        <count-down :date="competitions.data[0].starts_at" />
+
+        <a
+          v-if="competitions.data[0].sport == 'Freediving'"
+          :href="`/competitions/freediving-participation-application/${competitions.data[0].id}`"
           class="btn btn-primary custom-btn mx-auto mt-4"
         >
           اشترك الان
           <span></span>
-        </router-link>
+        </a>
+        <a
+          v-else-if="competitions.data[0].sport == 'Jetski'"
+          :href="`/competitions/jetski-participation-application/${competitions.data[0].id}`"
+          class="btn btn-primary custom-btn mx-auto mt-4"
+        >
+          اشترك الان
+          <span></span>
+        </a>
+        <a
+          v-else
+          :href="`/competitions/sport-fishing-participation-application/${competitions.data[0].id}`"
+          class="btn btn-primary custom-btn mx-auto mt-4"
+        >
+          اشترك الان
+          <span></span>
+        </a>
       </div>
       <div class="social">
         <ul>
@@ -53,11 +64,32 @@
         </ul>
       </div>
     </div>
+    <!-- <img src="@/assets/bottom-1.png" alt="assets" />
+    <img src="@/assets/header-bottom.png" alt="assets" /> -->
   </div>
 </template>
 
-<script>
-export default {}
+<script setup>
+import CountDown from '@/components/CountDown.vue'
+import axios from 'axios'
+import { onMounted, reactive } from 'vue'
+const competitions = reactive({
+  data: null,
+})
+
+onMounted(() => getCompetitions())
+
+function getCompetitions() {
+  axios.get('competitions/get-competitions').then((data) => {
+    competitions.data = data.data.competitions
+  })
+}
+
+function setTitle(title) {
+  return title.split('-')
+}
+
+// export default {}
 </script>
 
 <style lang="scss">
@@ -87,12 +119,20 @@ export default {}
       h2 {
         color: #fff;
         text-align: center;
-        font-size: 48px;
+        // font-size: 48px;
         margin: 0;
         font-weight: 700;
         span {
+          @include font-size();
+          font-weight: bold;
+          // font: normal normal bold 24px/35px Cairo;
+          &:first-child {
+            font-size: 40px;
+            line-height: 60px;
+            font-weight: bold;
+            // font: normal normal bold 40px/60px Cairo;
+          }
           // font-size: 80px;
-          font: normal normal bold 90px/124px Cairo;
           // letter-spacing: 4px;
         }
       }
@@ -160,27 +200,6 @@ export default {}
         }
       }
     }
-  }
-}
-.countdown {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  > div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 1px solid #cbdcf5;
-    background: #fff;
-    border-radius: 10px;
-    min-width: 60px;
-    padding: 10px;
-
-    color: #2a6cca;
-    font-weight: bold;
-    font-size: 18px;
-
-    margin: 0 10px;
   }
 }
 </style>
