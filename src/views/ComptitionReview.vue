@@ -199,7 +199,7 @@
 <script setup>
 import CountDown from '@/components/CountDown.vue'
 import axios from 'axios'
-import { onMounted, reactive, defineProps } from 'vue'
+import { onMounted, reactive  } from 'vue'
 
 const competition = reactive({
   data: null,
