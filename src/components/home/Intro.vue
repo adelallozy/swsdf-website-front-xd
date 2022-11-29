@@ -65,8 +65,16 @@
         </ul>
       </div>
     </div>
-    <!-- <img src="@/assets/bottom-1.png" alt="assets" />
-    <img src="@/assets/header-bottom.png" alt="assets" /> -->
+    <img
+      src="@/assets/headers/header-bottom1.png"
+      class="bottom1"
+      alt="assets"
+    />
+    <img
+      src="@/assets/headers/header-bottom2.png"
+      class="bottom2"
+      alt="assets"
+    />
   </div>
 </template>
 
@@ -96,7 +104,7 @@ function setTitle(title) {
 <style lang="scss">
 .intro {
   position: relative;
-  min-height: 100vh;
+  // min-height: 100vh;
   background-image: url('@/assets/intro.png');
   background-position: center center;
   background-size: cover;
@@ -113,10 +121,14 @@ function setTitle(title) {
   }
   .container {
     position: relative;
+    padding-bottom: 250px;
+    @media (min-width: 992px) {
+      padding-bottom: 300px;
+    }
     .content {
       position: relative;
       z-index: 12;
-      padding-top: 120px;
+      padding-top: 150px;
       h2 {
         color: #fff;
         text-align: center;
@@ -157,14 +169,16 @@ function setTitle(title) {
     }
     .social {
       position: absolute;
-      right: 0;
-      bottom: 0;
+      right: 30px;
+      bottom: 180px;
       z-index: 100;
       @media (max-width: 768px) {
         right: unset;
         left: 50%;
-        bottom: -60px;
         transform: translateX(-50%);
+      }
+      @media (min-width: 992px) {
+        bottom: 220px;
       }
       ul {
         list-style: none;
@@ -200,6 +214,29 @@ function setTitle(title) {
           }
         }
       }
+    }
+  }
+
+  img.bottom1,
+  img.bottom2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    object-position: center;
+  }
+  img.bottom2 {
+    height: 200px;
+    @media (max-width: 992px) {
+      // height: 250px;
+      width: 130%;
+      height: 170px;
+    }
+
+    @media (max-width: 576px) {
+      height: 170px;
+      width: 150%;
     }
   }
 }

@@ -48,4 +48,9 @@ watchEffect(() => {
 })
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.champions {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+</style>

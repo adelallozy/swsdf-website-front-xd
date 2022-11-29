@@ -1,5 +1,5 @@
 <template>
-  <section class="champions">
+  <section class="">
     <div class="container" v-if="competition.data">
       <div class="img-wrapper col-md-6 mx-auto" v-if="competition.data.logo">
         <img src="@/assets/jetskiLogo.png" alt="logo" class="img-fluid" />
@@ -199,7 +199,7 @@
 <script setup>
 import CountDown from '@/components/CountDown.vue'
 import axios from 'axios'
-import { onMounted, reactive  } from 'vue'
+import { onMounted, reactive } from 'vue'
 
 const competition = reactive({
   data: null,

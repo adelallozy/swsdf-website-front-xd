@@ -39,6 +39,7 @@ export default {
 <style lang="scss">
 .app-wrapper {
   padding-top: 80px;
+  min-height: 50vh;
   @media (min-width: 768px) {
     padding-top: 100px;
   }

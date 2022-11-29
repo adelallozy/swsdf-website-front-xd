@@ -39,6 +39,7 @@
         </div>
       </div>
     </div>
+    <img src="@/assets/headers/top-curve.png" class="top-curve" alt="curve" />
   </section>
 </template>
 
@@ -48,24 +49,25 @@ export default {}
 
 <style lang="scss">
 .competitions {
-  background: url('@/assets/section-bg1.png');
+  background: url('@/assets/section-bg.png');
   min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: end;
-  // background-size: cover;
-  background-position: center center;
+  background-size: cover;
+  background-position: top left;
   padding: 50px 0;
   position: relative;
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   background: url('@/assets/section-bg1.png');
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  // }
+  &::before {
+    content: '';
+    top: 0;
+    backdrop-filter: blur(16px);
+    left: 0;
+    position: absolute;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+  }
   .container {
     padding-top: 150px;
   }
@@ -136,6 +138,26 @@ export default {}
           }
         }
       }
+    }
+  }
+  img.top-curve {
+    position: absolute;
+    left: 0;
+    top: -50px;
+    z-index: -1;
+    height: 300px;
+    width: 100%;
+    @media (max-width: 992px) {
+      top: -80px;
+      width: 150%;
+    }
+    @media (max-width: 768px) {
+      width: 180%;
+      height: 240px;
+      top: -25px;
+    }
+    @media (max-width: 576px) {
+      width: 220%;
     }
   }
 }
