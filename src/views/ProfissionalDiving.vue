@@ -126,6 +126,7 @@ onMounted(() => {
       padding-left: 50px !important;
       left: 0;
       top: 50%;
+      z-index: 20;
       transform: translateY(-50%);
       border-top-left-radius: 0 !important;
       border-bottom-left-radius: 0 !important;
